@@ -1,22 +1,22 @@
-const HtmlWebpackPlugin = require("html-webpack-plugin")
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   output: {
     filename: 'app.bundle.js'
   },
-  plugins:[new HtmlWebpackPlugin({
+  plugins: [new HtmlWebpackPlugin({
     template: 'src/index.html'
   })],
 
   module: {
-    rules:[
+    rules: [
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        use:{
+        use: {
           loader: 'babel-loader',
-          options:{
-            presets:['@babel/preset-env','@babel/preset-react']
+          options: {
+            presets: ['@babel/preset-env', '@babel/preset-react']
           }
         }
       }
